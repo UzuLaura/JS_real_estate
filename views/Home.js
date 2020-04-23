@@ -3,10 +3,14 @@ import Add from "./Add.js";
 const Home = (app) => {
     app.innerHTML = `
     <h3>Filter</h3>
-    <button class="filter button is-light">Vilnius</button>
-    <button class="filter button is-light">Kaunas</button>
-    <button class="filter button is-light">Klaipėda</button>
-    <button id="add" class="button is-dark is-pulled-right">Add Estate</button>
+    <div class="flex-menu">
+        <div>
+            <button class="filter button is-outlined">Vilnius</button>
+            <button class="filter button is-outlined">Kaunas</button>
+            <button class="filter button is-outlined">Klaipėda</button>
+        </div>
+        <button id="add" class="button is-dark">Add Estate</button>
+    </div>
     <div class="flex" id="houses">
     </div>
 `;
@@ -39,8 +43,14 @@ const Home = (app) => {
 
     // Filter
     const buttons = document.querySelectorAll('button.filter');
-    buttons[0].addEventListener('click', () => {
+    buttons[0].addEventListener('click', e => {
+        e.preventDefault();
+
         document.getElementById('houses').innerHTML = '';
+        buttons[0].classList.add('is-primary');
+        buttons[1].classList.remove('is-primary');
+        buttons[2].classList.remove('is-primary');
+
         firebase
             .firestore()
             .collection("houses")
@@ -53,8 +63,14 @@ const Home = (app) => {
             })
     })
 
-    buttons[1].addEventListener('click', () => {
+    buttons[1].addEventListener('click', e => {
+        e.preventDefault();
+
         document.getElementById('houses').innerHTML = '';
+        buttons[1].classList.add('is-primary');
+        buttons[0].classList.remove('is-primary');
+        buttons[2].classList.remove('is-primary');
+
         firebase
             .firestore()
             .collection("houses")
@@ -67,8 +83,14 @@ const Home = (app) => {
             })
     })
 
-    buttons[2].addEventListener('click', () => {
+    buttons[2].addEventListener('click', e => {
+        e.preventDefault();
+
         document.getElementById('houses').innerHTML = '';
+        buttons[2].classList.add('is-primary');
+        buttons[1].classList.remove('is-primary');
+        buttons[0].classList.remove('is-primary');
+
         firebase
             .firestore()
             .collection("houses")
