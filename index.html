@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/bulma/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/app.js" type="module" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a id="logo" class="navbar-item title is-marginless" href="#">
+                        RealEstate
+                    </a>
+                </div>
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a id="regBtn" class="button is-dark">
+                                <strong>Sign up</strong>
+                            </a>
+                            <a id="logBtn" class="button is-light">
+                                Log in
+                            </a>
+                            <a id="logout" class="button is-light">
+                                Log out
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero is-dark is-medium">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 id="title" class="title"></h1>
+                    <h2 id="subtitle" class="subtitle"></h2>
+                </div>
+            </div>
+        </section>
+        <div id="notification" class="container notification is-danger" style="display: none;">
+            <button class="delete"></button>
+            <div id="notificationMsg"></div>
+        </div>         
+        <section id="app" class="container section">
+            <!-- APP -->
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>RealEstate</strong> by Laura Užusienė &copy; All Rights Reserved. Project made for learning
+                purposes.
+            </p>
+        </div>
+    </footer>
+    </div>
+</body>
+
+</html>

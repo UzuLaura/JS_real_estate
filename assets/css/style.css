@@ -1,0 +1,18 @@
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+.item {
+    width: calc(25% - 15px);
+    margin: 10px;
+    box-sizing: border-box;
+}
+.item:first-child {
+    margin-left: 0;
+}
+.item:nth-child(4) {
+    margin-right: 0;
+}
+#notification {
+    margin-top: 50px;
+}
